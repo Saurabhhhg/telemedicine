@@ -1,0 +1,153 @@
+/* Modern CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom Properties */
+:root {
+    --primary-color: #6a11cb;
+    /* Deep purple-blue */
+    --secondary-color: #2575fc;
+    /* Vibrant blue */
+    --accent-color: #4c70ff;
+    /* A blend of primary and secondary */
+    --background-start: #e6e9ff;
+    /* Lightened shade of blue */
+    --background-end: rgb(255, 255, 255);
+    /* Light purple tone */
+    --text-dark: #2a1a5e;
+    /* Dark purple for contrast */
+    --text-light: #ffffff;
+    /* White for clarity */
+    --card-background: rgba(255, 255, 255, 0.9);
+    /* Soft white for cards */
+    --shadow-color: rgba(106, 17, 203, 0.2);
+    /* Subtle shadow with purple tint */
+}
+
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(135deg, var(--background-start), var(--background-end));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark);
+}
+
+/* Container Styles */
+.container {
+    width: 90%;
+    max-width: 600px;
+    background: var(--card-background);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px var(--shadow-color);
+    animation: slideUp 1s forwards;
+}
+
+/* Form Styles */
+h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--shadow-color);
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+/* Link Styles */
+.text-center {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.text-center a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.text-center a:hover {
+    color: var(--secondary-color);
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
